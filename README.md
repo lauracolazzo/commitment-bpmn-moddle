@@ -17,7 +17,7 @@ To build the the demo execute the following command:
 node app
 ```
 
-To also run the test suite ypu need to execute:
+To also run the test suite you need to execute:
 
 ```
 npm run test
