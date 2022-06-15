@@ -1,0 +1,18 @@
+{
+  "name": "moddle-extension--proj",
+  "version": "1.0.0",
+  "description": "a bpmn-moddle extension that supports commitment element parsing and manipulation in  bpmn diagrams' xml",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "lauracolazzo",
+  "license": "ISC",
+  "dependencies": {
+    "bpmn-moddle": "^7.1.2"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0"
+  }
+}

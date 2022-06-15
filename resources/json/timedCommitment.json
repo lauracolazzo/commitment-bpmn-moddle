@@ -1,0 +1,90 @@
+{
+  "name": "TimedCommitment",
+  "uri": "https://polimi.it/schema/bpmn/tc",
+  "prefix": "tc",
+  "xml": {
+  "tagAlias": "lowerCase"
+  },
+  "types": [
+    {
+      "name": "Commitment",
+      "superClass": [ "Element" ],
+      "properties": [
+        {
+          "name": "type",
+          "isAttr": true,
+          "type": "CommitmentType"
+        },
+        {
+          "name": "scopeBegin",
+          "type": "ConnectionPoint",
+          "isAttr": true
+         },
+       {
+         "name": "scopeEnd",
+         "type": "ConnectionPoint",
+         "isAttr": true
+       },
+       {
+         "name": "antecedentExpr",
+         "type": "CommitmentExpression",
+         "isAttr": true
+       },
+       {
+         "name": "consequentExpr",
+         "type": "CommitmentExpression",
+         "isAttr": true
+       },
+       {
+         "name": "activeExpr",
+         "type": "CommitmentExpression",
+         "isAttr": true
+       }
+     ]
+    },
+    {
+      "name": "CommitmentExpression",
+      "superClass": [ "Element" ],
+      "extends": [
+        "bpmn:Expression"
+      ],
+      "properties": [
+        {
+          "name": "language",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+         "name": "body",
+         "isBody": true,
+         "type": "Element"
+        }
+      ]
+    },
+    {
+      "name": "ConnectionPoint",
+      "superClass": [ "Element" ],
+      "properties": [
+        {
+          "name": "event",
+          "isAttr": true,
+          "type": "MessageType"
+        },
+        {
+          "name": "messageRef",
+          "type": "bpmn:MessageFlow",
+          "isAttr": true,
+          "isReference": true
+       }
+     ]
+    }
+  ],
+  "enumerations": [
+    {
+      "CommitmentType": ["Goal", "Persisting"]
+    },
+    {
+      "MessageType": ["Send", "Receive"]
+    }
+  ]
+}
