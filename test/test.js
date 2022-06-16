@@ -54,11 +54,12 @@ var result;
 
       const definitions = await parser.objTreeFromXml(empty, async(root) => {
 
-        //creates a new commitment element
+        //create a new commitment element
         const commitment = await parser.create('tc:Commitment');
+        //create a new connectionPoint element
         const connectionPoint = await parser.create('tc:ConnectionPoint');
 
-        //create new extension elements section with commitment inside
+        //create new extension elements section with commitment and connectionPoint inside
         const extensionElements = await parser.create('bpmn:ExtensionElements');
         extensionElements.values = [commitment,connectionPoint];
         root.extensionElements = extensionElements;
